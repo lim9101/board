@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+		<form class="form-horizontal" role="form" id="frmU" name="frmU"
+		method="post" action="postUpdate" enctype= multipart/form-data>
+		<div class="noticeUpdate">
+		<h1>글 수정</h1>
+		<table>
+			<tr>
+				<th><label for="title">제목</label></th>
+				<td class="tdStyle"><input type="text" name="title" id="title" size="50" value="${pdto.title }"/></td>
+			</tr>
+			<tr>
+				<th><label for="user_id">작성자</label></th>
+				<td class="tdStyle"><input type="text" name="userId" id="userId" value="${pdto.user.userId}" readonly="readonly"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea id="content" class="ckeditor" name="content" cols="97" rows="20">${pdto.content }</textarea></td>
+			</tr>
+			<tr>
+				<th><label for="upload">첨부파일</label></th>
+				<td class="tdStyle">
+					<c:forEach items="${adto}" var="dto">
+						<div>${fn:substringAfter(dto.file_name,"_")} <a href="#"><button type="button" onclick="delFile(this)" class="del" value="${dto.file_no}">삭제</button></a><button>수정</button></div>
+					</c:forEach>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="upload">첨부파일 <button type="button" class="fileAdd">+</button></label></th>
+				<td class="tdStyle tdAddFile"></td>
+			</tr>
+		</table>
+		</div><!-- end noticeUpdate -->
+		<div class="Btn">
+			<button type="button" class="postUpdateBtn">수정하기</button>
+			<a href="postList"><button type="button">목록</button></a>
+			<input type="button" class="cancel" value="취소" />
+				<c:choose>
+					<c:when test="${!empty adto}">
+						<c:forEach items="${adto}" var="dto">
+							<input type="hidden" value="${dto.file_no }" name="fileNo"/>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<input type="hidden" value="0" name="fileNo"/>
+					</c:otherwise>
+				</c:choose>
+
+
+			<input type="hidden" value="${pdto.pNo}" name="pNo"/>
+			<input type="hidden" value="${pdto.spNo}" name="spNo"/>
+
+		</div><!-- end Btn -->
+		</form>
+	</div><!-- end container -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+.container{
+	margin: 0 auto;
+ 	width:1000px;
+}
+.container .noticeTitel{
+	float: left;
+}
+.container .postAdd{
+	float: right;
+	margin-right: 70px;
+}
+.noticeList table{
+	border-collapse: collapse;
+    border-spacing: 0;
+	width:900px;
+	border-top: 2px solid #BFAD9F;
+	border-bottom: 2px solid #BFAD9F;
+}
+.noticeList table a{
+	color:black;
+	cursor: pointer;
+}
+.noticeList table th{
+	font-weight: normal;
+    height: 43px;
+    background: #f7f6f4;
+    border-bottom: 1px solid #E6E2DE;
+    font-size: 14px;
+    color: #664738;
+    text-align: left;
+    padding-left: 5px;
+}
+.noticeList table tr.noti{
+	background: #f7f6f4;
+}
+.noticeList table td {
+	border-bottom: 1px solid #E6E2DE;
+	color:#464646;
+	font-size: 14px;
+	padding-left: 10px;
+	height: 32px;
+}
+.noticeList table tr:HOVER{
+	background-color: #F7F6F4;
+}
+.noticeList table td a:HOVER{
+	text-decoration: underline;
+}

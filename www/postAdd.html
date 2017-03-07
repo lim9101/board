@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<form class="form-horizontal" role="form" id="frmWR" name="frmWR"
+		method="post" enctype= multipart/form-data>
+		<div class="noticeAdd">
+		<h1>글쓰기</h1>
+		<table>
+			<c:if test="${user.userId=='admin'}">
+				<tr>
+					<th><label for="kind">공지</label></th>
+					<td><input type="checkbox" value="1" name="kind"></td>
+				</tr>
+			</c:if>
+			<tr>
+				<th><label for="title"><c:if test="${!empty dto}">답변&nbsp;</c:if>제목</label></th>
+				<td class="tdStyle"><input type="text" name="title" id="title" size="50"/></td>
+			</tr>
+			<tr>
+				<th><label for="user_id">작성자</label></th>
+				<td class="tdStyle"><input type="text" name="user_id" id="user_id" value="${user.userId}" readonly="readonly"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea id="content" class="ckeditor" name="content" cols="97" rows="20"></textarea>
+				<script> CKEDITOR.replace('ckeditor'); </script>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="upload">첨부파일 <button type="button" class="fileAdd">+</button></label></th>
+				<td class="tdStyle tdAddFile"><div><input type="file" id="filepath" name="upload" class="form-control upload" placeholder="upload" /><button type='button' onclick="delFile(this)" class="fileDel">X</button></div></td>
+			</tr>
+		</table>
+
+		</div><!-- end noticeAdd -->
+		<div class="Btn">
+			<button type="button" class="postAddBtn">글쓰기</button>
+			<button type="button" onclick="listClick()">목록</button>
+			<c:if test="${!empty dto.pNo }">
+				<input type="hidden" name="pNo" value="${dto.pNo }"/>
+				<input type="hidden" name="spNo" value="${dto.spNo }"/>
+				<input type="hidden" name="depth" value="${dto.depth }"/>
+				<input type="hidden" name="plevel" value="${dto.plevel }"/>
+			</c:if>
+		</div><!-- end Btn -->
+		</form>
+	</div><!-- end container -->
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.container{
+	margin: 0 auto;
+ 	width:700px;
+}
+.noticeAdd table{
+	border-collapse: collapse;
+    border-spacing: 0;
+	width:700px;
+	border-top: 2px solid #BFAD9F;
+	border-bottom: 2px solid #BFAD9F;
+}
+.noticeAdd table th{
+	font-weight: normal;
+    height: 43px;
+    padding-left:15px;
+    text-align:center;
+    background: #f7f6f4;
+    border-bottom: 1px solid #E6E2DE;
+    font-size: 14px;
+    color: #664738;
+    text-align: left;
+}
+.noticeAdd table td.tdStyle {
+	border-bottom: 1px solid #E6E2DE;
+	color:#464646;
+	font-size: 14px;
+	padding-left: 10px;
+	height: 32px;
+}
