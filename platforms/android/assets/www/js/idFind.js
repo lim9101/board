@@ -6,7 +6,7 @@ $(document).ready(function(){
 		 }else{
 			 $.ajax({
 					method:"POST",
-					url:"findId",
+					url:ipurl+"findId",
 					data:formData,
 					success:function(user){
 						if(user.userId=='' || user.userId==null || user.userId==undefined){
@@ -17,9 +17,9 @@ $(document).ready(function(){
 							window.close();
 						}
 					}
-				}); 
+				});
 		 }
-		 
-		
-	}); 
+
+
+	});
 });

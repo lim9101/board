@@ -7,7 +7,7 @@ $(function(){
 		if($("input[name='userPw']").val() == $("input[name='userRePw']").val()){
 			$.ajax({
 				method:"POST",
-				url:"updateUser",
+				url:ipurl+"updateUser",
 				data:formData,
 				success:function(result){
 					if(result){
@@ -22,6 +22,6 @@ $(function(){
 		}else{
 			alert("두 비밀번호가 일치하지 않습니다.");
 		}
-	
+
 	})
 });

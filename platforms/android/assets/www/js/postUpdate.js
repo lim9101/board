@@ -7,7 +7,7 @@ var delFileInput =	function (fileDel){
 var delFile=function(fileNo){
 	$.ajax({
 		method: "get",
-		url: "delFile",
+		url: ipurl+"delFile",
 		data: {file_no:$(fileNo).val()},
 		success: function(result){
 			$(fileNo).parent().parent().remove();
@@ -45,13 +45,13 @@ $(document).ready(function(){
 				formData.set("content",CKEDITOR.instances.content.getData());
 				$.ajax({
 					method:'post',
-					url:'postUpdate',
+					url:ipurl+'postUpdate',
 					data:formData,
 					processData: false,
 					contentType: false,
 					success:function(result){
 					if(result){
-						location.href="postList";
+						location.href="postList.html";
 					}else{
 						alert("이미지파일이 아닙니다.");
 					}

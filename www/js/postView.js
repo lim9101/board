@@ -18,7 +18,7 @@ var comentAdd =function(coment){
 	}else{
 		$.ajax({
 			method:"POST",
-			url:"comentAdd",
+			url:ipurl+"comentAdd",
 			data:coment,
 			success:function(result){
 				comentView(coment);
@@ -47,7 +47,7 @@ var updateComent = function(cNo){
 	}
 	$.ajax({
 		method:"POST",
-		url:"updateComent",
+		url:ipurl+"updateComent",
 		data:coment,
 		success:function(result){
 			$(".comentLine").empty();
@@ -75,7 +75,7 @@ var comentDel = function(cNo){
 	}
 	$.ajax({
 		method:"POST",
-		url:"delComent",
+		url:ipurl+"delComent",
 		data:coment,
 		success:function(result){
 			$(".comentLine").empty();
@@ -153,7 +153,7 @@ var comentList=function(coment){
 		}
 
 	$.ajax({
-	url:"getComents",
+	url:ipurl+"getComents",
 	data: coment,
 	success:function(coments){
 		$(".comentHiden").text("댓글"+"("+coments.length+")");
@@ -169,7 +169,7 @@ var comentList=function(coment){
 
 function updateClick(){
 	if(confirm("수정하시겠습니까?")==true){
-		location.href="postUpdate?pNo=${pdto.pNo}";
+		location.href=ipurl+"postUpdate?pNo=${pdto.pNo}";
 	}else{
 		return;
 	}
@@ -177,7 +177,7 @@ function updateClick(){
 
 function deleteClick(){
 	if(confirm("삭제하시겠습니까?")==true){
-		location.href="postDelete?pNo=${pdto.pNo}&spNo=${pdto.spNo}&depth=${pdto.depth}&fileNo="+$('.fileNo').val()+"&plevel=${pdto.plevel}";
+		location.href=ipurl+"postDelete?pNo=${pdto.pNo}&spNo=${pdto.spNo}&depth=${pdto.depth}&fileNo="+$('.fileNo').val()+"&plevel=${pdto.plevel}";
 	}else{
 		return;
 	}

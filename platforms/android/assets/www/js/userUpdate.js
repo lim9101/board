@@ -4,13 +4,13 @@
 
 $(document).ready(function(){
 	$(".canselBtn").on("click",function(){
-		location.href="postList";
+		location.href="postList.html";
 	});
 	$(".updateBtn").on("click",function(){
 		 var formData = $("form").serialize();
 		$.ajax({
 			method:"POST",
-			url:"updateUser",
+			url:ipurl+"updateUser",
 			data:formData,
 			success:function(result){
 				console.log(result);
@@ -20,11 +20,11 @@ $(document).ready(function(){
 				}else{
 					alert("정보수정 실패");
 				}
-				
+
 			}
 		});
 	});
-	
+
 	$(".findAddress").postcodifyPopUp();
 
 });

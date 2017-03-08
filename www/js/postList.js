@@ -1,3 +1,12 @@
+$.ajax({
+	url:ipurl+'sessionCheck',
+	success:function(result){
+		if(result != null && result != ""){
+		$(".info").text(result+"님이 로그인하셨습니다.");
+		}
+	}
+});
+
 $(document).ready(function(){
 		$('[name=searchBtn]').bind("click",function(){
 			$('form').attr('action','postList');

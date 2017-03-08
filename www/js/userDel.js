@@ -8,7 +8,7 @@ $(document).ready(function(){
 				userPw:$("input[name='userPw']").val()
 		}
 		$.ajax({
-			url:"delUser",
+			url:ipurl+"delUser",
 			method:"POST",
 			data:user,
 			success:function(result){

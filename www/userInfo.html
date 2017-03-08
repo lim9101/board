@@ -7,6 +7,7 @@
 <script type="text/javascript" src="js/popup.js"></script>
 <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 <script type="text/javascript" src="js/userInfo.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
 		<P>NAME:<input type="text" class="name" value="${user.userName}" readonly="readonly"/></P>
 		<P>EMAIL:<input type="email" class="email" value="${user.email}" readonly="readonly"/></P>
 		<P>PHONE:<input type="tel" class="phone" value="${user.phone}" readonly="readonly"/></P>
-		 
+
 		 <c:if test='${user.gender eq "남"}'>
 		  <P>GENDER: 남<input type="radio" name="gender" value="남"  checked="checked"/> 여<input type="radio" name="gender" value="여"/></P>
 		 </c:if>

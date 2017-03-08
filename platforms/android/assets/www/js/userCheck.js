@@ -8,7 +8,7 @@ $(document).ready(function(){
 				userPw:$("#userPw").val()
 		}
 		$.ajax({
-			url:"check",
+			url:ipurl+"check",
 			data:user,
 			success:function(result){
 				console.log(result);
@@ -20,9 +20,9 @@ $(document).ready(function(){
 				}else{
 					alert("비밀번호가 같지 않습니다.");
 				}
-				
+
 			}
 		});
-	
+
 	})
 });

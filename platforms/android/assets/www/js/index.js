@@ -1,12 +1,15 @@
-var ipurl = 'http://192.168.1.11:80/board/';
-// var sessionCheck = function(){
-// 	var session = "${user}";
-// 	if(session != ""){
-// 		console.log(session);
-// 		 location.href="postList.html";
-// 	}
-// }
-// sessionCheck();
+function sessionCheck(){
+	$.ajax({
+		url:ipurl+'sessionCheck',
+		success:function(result){
+			if(result != null && result != ""){
+			location.href='postList.html';
+			}
+		}
+	});
+}
+
+
 $(document).ready(function(){
 	$(".login").on("click",function(){
 		var user = {
