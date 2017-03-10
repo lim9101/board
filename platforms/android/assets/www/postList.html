@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/postList.css">
-	<script src="js/jquery-1.11.1.js"></script>
+	<script src="./js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="./js/common.js"></script>
 	<script type="text/javascript" src="./js/postList.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
 			</form>
 		</div>
 		<div class="noticeList">
-			<table>
+			<table class="noticeTable">
 				<tr>
 					<th width="10%">글번호</th>
 					<th width="54%">제목</th>
@@ -40,7 +40,16 @@
 					<th width="7%">조회수</th>
 					<th width="13%">등록일</th>
 				</tr>
-				<c:forEach items="${pList}" var="dto">
+				<!-- <tr>
+					<td>
+					</td>
+					<td>
+					</td>
+					<td>${dto.user.userId}</td>
+					<td>${dto.count }</td>
+					<td>${dto.date_in }</td>
+				</tr> -->
+				<!-- <c:forEach items="${pList}" var="dto">
 					<c:choose>
 						<c:when test="${dto.kind==1}">
 							<tr class="noti">
@@ -77,7 +86,7 @@
 					<td>${dto.count }</td>
 					<td>${dto.date_in }</td>
 					</tr>
-				</c:forEach>
+				</c:forEach> -->
 			</table>
 
 		</div>

@@ -38,11 +38,11 @@ $(document).ready(function(){
 	});
 
 	$(".idFind").on("click",function(){
-		openPopup("idFind","idFind",370,360);
+		openPopup("idFind.html","idFind",370,360);
 	});
 
 	$(".pwFind").on("click",function(){
-		openPopup("pwFind","pwFind",370,360);
+		openPopup("pwFind.html","pwFind",370,360);
 	});
 
 });

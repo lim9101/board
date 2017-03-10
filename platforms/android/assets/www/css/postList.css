@@ -1,6 +1,6 @@
 .container{
 	margin: 0 auto;
- 	width:1000px;
+ 	width:100%;
 }
 .container .noticeTitel{
 	float: left;
@@ -12,7 +12,7 @@
 .noticeList table{
 	border-collapse: collapse;
     border-spacing: 0;
-	width:900px;
+	width:100%;
 	border-top: 2px solid #BFAD9F;
 	border-bottom: 2px solid #BFAD9F;
 }

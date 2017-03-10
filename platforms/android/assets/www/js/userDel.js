@@ -13,9 +13,8 @@ $(document).ready(function(){
 			data:user,
 			success:function(result){
 				if(result){
-					opener.checkfunction(result,"index");
-					 window.open("","check","");
-						window.close();
+					alert("탈퇴가 정상적으로 완료 되었습니다.");
+					location.href="index.html";
 				}else{
 					alert("비밀번호가 다릅니다.");
 				}
